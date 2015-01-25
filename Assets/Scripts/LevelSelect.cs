@@ -15,11 +15,11 @@ public class LevelSelect : MonoBehaviour {
 
 	public void StartLevel1()
 	{
-		Application.LoadLevel ("Level1");
+		Application.LoadLevel ("Level1");		// load the selected scene to screen
 	}
 
 	public void restart()
 	{
-		Application.LoadLevel (Application.loadedLevelName);
+		Application.LoadLevel (Application.loadedLevelName);		// reload the current scene
 	}
 }

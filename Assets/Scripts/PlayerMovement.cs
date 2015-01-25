@@ -4,17 +4,17 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour {
 
 
-	public float speed; //declare the player move speed in Unity inspector
-	public int jumpHeight; //this is set in the Unity Inspector
-	public bool isGrounded = false; //this can be seen working in the Unity inspector
-	public Transform groundedEnd; //declares the empty game object in Unity acting as a collider set to the position of the player
-	public float distToGround;
+	public float speed; //set the speed value of the main character
+	public int jumpHeight; //set the jump height value of the main character
+
+	bool left, right;
+
 
 	// Use this for initialization
 	void Start () {
 
-		speed = 5;
-		jumpHeight = 300;
+		speed = 5;				//set the speed
+		jumpHeight = 300;		//set the jump height
 
 	}
 	
@@ -26,17 +26,15 @@ public class PlayerMovement : MonoBehaviour {
 
 		var absVelY = Mathf.Abs (rigidbody2D.velocity.y);
 		
-		if (absVelY == 0)
+		if (absVelY == 0)						//Jump by detecting if is touching the ground
 		{
-			rigidbody2D.AddForce (Vector2.up * jumpHeight);
-			Debug.Log("Grounded");
+			rigidbody2D.AddForce (Vector2.up * jumpHeight);			// set the new force values
+			Debug.Log("Grounded");				// print to console
 		}
 		else
 		{
 
 		}
-		//isGrounded = Physics2D.Linecast(this.transform.position, groundedEnd.position, 1 << LayerMask.NameToLayer("Ground")); 
-		//the above line of code draws a linecast downwards to detect the ground game objects that have been placed in a ground layer
 	
 	}
 
@@ -44,19 +42,36 @@ public class PlayerMovement : MonoBehaviour {
 	void Movement()
 	{
 		//Move Right
-		if (Input.GetKey (KeyCode.RightArrow)) 
+		if (Input.GetKey (KeyCode.RightArrow) || right) 
 		{
-			transform.Translate (Vector2.right * speed * Time.deltaTime);
+			transform.Translate (Vector2.right * speed * Time.deltaTime);		// set the new position
 			transform.eulerAngles = new Vector2(0,0); 
 		}
 		//Move Left
-		if (Input.GetKey (KeyCode.LeftArrow)) 
+		if (Input.GetKey (KeyCode.LeftArrow) || left) 
 		{
-			transform.Translate (Vector2.right * speed * Time.deltaTime);
+			transform.Translate (Vector2.right * speed * Time.deltaTime);		// set the new position
 			transform.eulerAngles = new Vector2(0,180); //flip the character on its x axis
 		}
-		//Jump by detecting if the user presses W and then checking to see if the linecast is touching the ground
+	
 		
 	}
-	
+
+
+	public void setLeft()		//set the left flag for the touch screen 
+	{
+		left = true;
+	}
+
+	public void setRight()		//set the right flag for the touch screen 
+	{
+		right = true;
+	}
+
+	public void clearLeftRight()		//clear the right and right flag
+	{
+		left = false;
+		right = false;
+	}
+
 }

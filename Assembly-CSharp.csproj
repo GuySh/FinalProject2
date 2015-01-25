@@ -50,8 +50,6 @@
      <Compile Include="Assets\Scripts\CommunicationMenu.cs" />
      <Compile Include="Assets\Scripts\LevelSelect.cs" />
      <Compile Include="Assets\Scripts\Panel.cs" />
-     <Compile Include="Assets\Scripts\Player.cs" />
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\StreamingAssets\tester.cs" />
  <Reference Include="UnityEngine.UI">
