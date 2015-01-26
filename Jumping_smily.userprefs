@@ -1,20 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CommunicationMenu.cs">
     <Files>
-      <File FileName="..\tutorial game - superjetdroid\Assets\Scripts\connectionMenu.cs" Line="94" Column="66" />
-      <File FileName="..\tutorial game - superjetdroid\Assets\Scripts\CustomSerialization.cs" Line="1" Column="1" />
-      <File FileName="..\tutorial game - superjetdroid\Assets\Scripts\HelloWorld.cs" Line="1" Column="1" />
-      <File FileName="..\tutorial game - superjetdroid\Assets\Scripts\LevelSelect.cs" Line="1" Column="1" />
-      <File FileName="..\tutorial game - superjetdroid\Assets\Scripts\MoveCapsule.cs" Line="1" Column="1" />
-      <File FileName="..\tutorial game - superjetdroid\Assets\Scripts\NetworkMenu.cs" Line="1" Column="1" />
-      <File FileName="..\tutorial game - superjetdroid\Assets\Scripts\Panel.cs" Line="1" Column="1" />
-      <File FileName="..\tutorial game - superjetdroid\Assets\Scripts\PlayerController.cs" Line="1" Column="1" />
-      <File FileName="..\tutorial game - superjetdroid\Assets\Scripts\PlayerMovement.cs" Line="40" Column="63" />
-      <File FileName="..\tutorial game - superjetdroid\Assets\Scripts\RandomSprite.cs" Line="1" Column="1" />
-      <File FileName="..\tutorial game - superjetdroid\Assets\Scripts\TouchCode.cs" Line="1" Column="1" />
-      <File FileName="..\tutorial game - superjetdroid\Assets\Scripts\UserInputHandler.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerMovement.cs" Line="13" Column="32" />
+      <File FileName="Assets\Scripts\CommunicationMenu.cs" Line="78" Column="73" />
+      <File FileName="Assets\Scripts\PlayerMovement.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

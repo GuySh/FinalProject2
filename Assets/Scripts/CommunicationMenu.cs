@@ -14,6 +14,9 @@ public class CommunicationMenu : MonoBehaviour {
 	private bool connected = false;					// connected flag
 	public InputField portIn, ipIn;					// port and ip from the to set from the input fields
 
+	private WWW loadFile;	
+	public string rpcString;
+
 	// Use this for initialization
 	void Start () {
 		go = GameObject.FindGameObjectWithTag ("CommunicationMenuCanvas");		//find the objct "CommunicationMenuCanvas"
@@ -25,6 +28,8 @@ public class CommunicationMenu : MonoBehaviour {
 		go = GameObject.FindGameObjectWithTag ("IpInputField");					//find the objct "IpInputField"
 		ipIn = go.GetComponentInChildren<InputField>();							// get the InputFields component of the "CommunicationMenuCanvas" object
 
+
+		rpcString = "Empty";
 	}
 	
 	// Update is called once per frame
@@ -70,8 +75,7 @@ public class CommunicationMenu : MonoBehaviour {
 
 		p.setText (connectionIp + " " + portNumber);
 		Network.Connect (connectionIp, portNumber);
-		p.setText ("Connctions: " + Network.connections.Length.ToString ());
-
+		//p.setText ("Connctions: " + Network.connections.Length.ToString ());
 	}
 
 	public void host()		// be the server
@@ -89,6 +93,41 @@ public class CommunicationMenu : MonoBehaviour {
 	public void printNumOfConnections()			// print the number of connections
 	{
 		p.setText ("Connections: " + Network.connections.Length.ToString ());
+	}
+
+
+	public void rpcSendButton()
+	{
+		if (connected) 
+		{
+			networkView.RPC ("sendString", RPCMode.Others, new object[]{rpcString});
+		}
+	}
+	
+	
+	
+	[RPC]
+	public void sendString(string str)		// sed the string to client
+	{
+		rpcString = str;
+	}
+	
+	public void printRpcString()
+	{
+		p.setText (rpcString);
+	}
+	
+	
+	public void wwwGetfileContent()			// --- testing --- getting test.cs file from android device and print the file content to screen
+	{
+		loadFile = new WWW("jar:file://" + Application.dataPath + "!/assets/test.cs");
+		while (!loadFile.isDone) {
+		}
+		
+		
+		rpcString = loadFile.text;
+		p.setText(loadFile.text);
+		
 	}
 
 	
