@@ -24,11 +24,11 @@ public class PlayerMovement : MonoBehaviour {
 
 		Movement (); //call the movement function below
 
-		var absVelY = Mathf.Abs (rigidbody2D.velocity.y);
+		var absVelY = Mathf.Abs (GetComponent<Rigidbody2D>().velocity.y);
 		
 		if (absVelY == 0)						//Jump by detecting if is touching the ground
 		{
-			rigidbody2D.AddForce (Vector2.up * jumpHeight);			// set the new force values
+			GetComponent<Rigidbody2D>().AddForce (Vector2.up * jumpHeight);			// set the new force values
 			Debug.Log("Grounded");				// print to console
 		}
 		else

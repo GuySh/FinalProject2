@@ -100,7 +100,7 @@ public class CommunicationMenu : MonoBehaviour {
 	{
 		if (connected) 
 		{
-			networkView.RPC ("sendString", RPCMode.Others, new object[]{rpcString});
+			GetComponent<NetworkView>().RPC ("sendString", RPCMode.Others, new object[]{rpcString});
 		}
 	}
 	
