@@ -5,7 +5,6 @@ public class PlayerMovement : MonoBehaviour {
 
 
 	public float speed; //set the speed value of the main character
-	public int jumpHeight; //set the jump height value of the main character
 
 	bool left, right;
 
@@ -14,28 +13,31 @@ public class PlayerMovement : MonoBehaviour {
 	void Start () {
 
 		speed = 5;				//set the speed
-		jumpHeight = 300;		//set the jump height
+
+		Rigidbody2D r = gameObject.AddComponent<Rigidbody2D> ();
+		r.mass = 1;
+		r.drag = 0.3f;
+		r.angularDrag = 0.05f;
+		r.gravityScale = 4f;
+		r.fixedAngle = true;
+		
+		CircleCollider2D c = gameObject.AddComponent<CircleCollider2D>();
+		PhysicsMaterial2D material = new PhysicsMaterial2D ();
+		material.bounciness = 1f;
+		material.friction = 0.4f;
+		c.sharedMaterial = material;
+		c.radius = 0.4f;
+		Vector2 vec = new Vector2 ();
+		vec.x = 0.03f;
+		vec.y = 0.03f;
+		c.offset = vec;
 
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
-
+	void Update ()
+	{
 		Movement (); //call the movement function below
-
-		var absVelY = Mathf.Abs (GetComponent<Rigidbody2D>().velocity.y);
-		
-		if (absVelY == 0)						//Jump by detecting if is touching the ground
-		{
-			GetComponent<Rigidbody2D>().AddForce (Vector2.up * jumpHeight);			// set the new force values
-			Debug.Log("Grounded");				// print to console
-		}
-		else
-		{
-
-		}
-	
 	}
 
 

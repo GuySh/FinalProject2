@@ -11,9 +11,6 @@ public class Panel : MonoBehaviour {		// get the text component of any Panel obj
 	// Use this for initialization
 	void Start () {
 		text = gameObject.GetComponentInChildren<Text>();  // get the text object of the current object that compose this class
-		//setText("miao miao");
-		//go = GameObject.FindGameObjectWithTag ("connectionGameObject");
-		//cm = go.GetComponent<connectionMenu>();
 	}
 
 	public void setText(string t)		// set the text field
