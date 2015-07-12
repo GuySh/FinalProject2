@@ -1,8 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\tutorial game - superjetdroid\Assets\Scripts\Collectible.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AndroidMusic.cs">
     <Files>
-      <File FileName="..\tutorial game - superjetdroid\Assets\Scripts\Collectible.cs" Line="16" Column="43" />
+      <File FileName="Assets\Scripts\Flag.cs" Line="20" Column="25" />
+      <File FileName="Assets\Scripts\GameLogic.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BackgroundMusic.cs" Line="6" Column="1" />
+      <File FileName="Assets\Scripts\MoveLeftRight.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\StopMusic.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\AttributeClass.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\AndroidMusic.cs" Line="30" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
